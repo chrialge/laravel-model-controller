@@ -16,15 +16,21 @@
     </div>
 
 
-    <div class="container">
+    <div class="container py-5">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2">
             @forelse ($movies as $movie)
-                <div class="col">
-                    <div class="card">
+                <div class="col " style="min-height: 100%">
+                    <div class="card" style="min-height: 100%">
                         <div class="card-body">
-                            <div class="card-title">{{ $movie->title }}</div>
-                            <div class="card-subtitle">{{ $movie->original_title }} </div>
+                            <h4 class="card-title">Title: {{ $movie->title }}</h4>
+                            <p class="card-text">Original Title: {{ $movie->original_title }}</p>
+
                         </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Nationality: {{ $movie->nationality }}</li>
+                            <li class="list-group-item">date: {{ $movie->date }}</li>
+                            <li class="list-group-item">vote: {{ $movie->vote }}</li>
+                        </ul>
                     </div>
                 </div>
             @empty
